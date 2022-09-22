@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, Unique, Check } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, Unique, Check, OneToMany } from "typeorm"
 import { Exclude } from "class-transformer"
+import { Contact } from "./contact.entity"
 
 @Entity("users")
 @Unique(["email"])
@@ -29,6 +30,9 @@ class User {
 
     @UpdateDateColumn()
     updatedAt: Date
+
+    @OneToMany((type) => Contact, (contact) => contact.user, {eager:true})
+    contacts: Contact[];
 }
 
 export { User }

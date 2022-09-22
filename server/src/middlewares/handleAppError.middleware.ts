@@ -16,9 +16,16 @@ const handleAppErrorMiddeware = (error: Error, req: Request, res: Response, _: N
         })
     }
 
-    if(error.message.includes('duplicate')){
+    if(error.message.includes('UQ_97672ac88f789774dd47f7c8be3')){
         return res.status(400).json({
             email: "email already exists",
+            
+        })
+    }
+
+    if(error.message.includes('UQ_3e8ba81fb64ba00f644d6a22435')){
+        return res.status(400).json({
+            telefone: "telefone already registered",
             
         })
     }

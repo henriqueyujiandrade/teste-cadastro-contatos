@@ -4,6 +4,7 @@ import listUserService from "../services/users/listUser.service"
 import { instanceToPlain } from "class-transformer"
 import createLoginService from "../services/login/login.service"
 import updateUserService from "../services/users/updateUser.service"
+import deleteUserService from "../services/users/deleteUser.service"
 
 
 const createUserController = async (req: Request, res: Response) => {     
@@ -23,9 +24,15 @@ const updateUserController = async (req: Request, res: Response) => {
         const id = req.params.id;
         const newUser = req.body;
         const updatedUser = await updateUserService(id, newUser)        
-        return res.status(200).json(instanceToPlain({user:updatedUser}))  
+        return res.status(200).json(instanceToPlain({user:updatedUser})) 
+}
+
+const deleteUserController = async (req: Request, res: Response) => {
+        const id = req.params.id
+        await deleteUserService(id)
+        return res.status(200).json({message: "User deleted with success"})     
 }
 
 
 
-export { createUserController, listUserControllers, updateUserController }
+export { createUserController, listUserControllers, updateUserController, deleteUserController }

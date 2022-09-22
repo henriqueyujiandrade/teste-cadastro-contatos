@@ -14,7 +14,7 @@ const updateUserService = async (id: string, user: IUpdateUser) => {
   })
 
   if (!findUser) {
-    throw new AppError("Post not found", 404);
+    throw new AppError("User not found", 404);
   }
 
   if (user.password) {
