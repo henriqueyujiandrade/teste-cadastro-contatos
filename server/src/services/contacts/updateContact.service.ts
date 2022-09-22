@@ -14,7 +14,7 @@ const updateContactService= async (id: string, userId: string, contact: IUpdateC
           }
       }   
     })
-  
+    
     if (!findContact) {
       throw new AppError("Contact not found in your contacts list", 404);
     }
