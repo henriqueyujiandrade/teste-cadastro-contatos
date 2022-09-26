@@ -13,7 +13,7 @@
 
 ## 1. Sobre
 
-DevTech é um projeto que foi desenvolvido no quarto módulo do curso de Desenvolvimento Full Stack da Kenzie Academy Brasil, onde colocamos em prática o aprendizado técnico adquirido durante o módulo e as habilidades interpessoais ao trabalhar em equipe. A aplicação é uma API que simula a API de uma rede social, permitindo o usuário fazer cadastro de uma conta, login, cadastro de postagens, comentários em postagens, responder os comentários etc.
+Esse Teste consiste em um projeto Full Stack onde o usuário pode se cadastrar com seus dados, realizer o login e cadastrar diversos contatos em sua conta.
 
 <a name="links"></a>
 
@@ -61,25 +61,25 @@ DevTech é um projeto que foi desenvolvido no quarto módulo do curso de Desenvo
 
 `yarn`
 
-4.2.3 Crie um arquivo na raiz do projeto chamado .env e altere as variáveis de ambiente conforme o .env.example do projeto
+4.2.3 Crie um arquivo na raiz do projeto backend (dentro da pasta server) chamado .env e altere as variáveis de ambiente conforme o .env.example do projeto
 
 exemplo:
 ```
 DB_HOST='localhost'
 DB_PASSWORD='1234'
-DB='meu_banco'
+DB='meubanco'
 DB_USER='meuuser'
 SECRET_KEY='abcdefghij'
 ```
 
-4.2.4 Para rodar o projeto utilize o comando `yarn dev` no terminal, se tudo der certo receberá uma mensagem como essa:
+4.2.4 Para rodar o servidor utilize o comando `yarn dev` no terminal dentro da pasta 'server', se tudo der certo receberá uma mensagem como essa:
 
       query: SELECT * FROM current_schema()
       query: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
       query: SHOW server_version;
       Running at http://localhost:3333
 
-4.2.5 Mantenha esse terminal aberto rodando na porta 3333. Agora abra um novo terminal e entre na pasta 'client', instale as dependências com o comando 'yarn' da mesma forma, e depois de instalado, rode o comando 'yarn start'. Você deverá ver uma mensagem como essa:
+4.2.5 Mantenha esse terminal aberto rodando na porta 3333. Agora abra um novo terminal e entre na pasta 'client', instale as dependências com o comando 'yarn' da mesma forma, e depois de instalado, rode o comando 'yarn start' estando dentro da pasta 'client'. Você deverá ver uma mensagem como essa:
 
 ```
 You can now view client in the browser.
